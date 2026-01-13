@@ -56,7 +56,8 @@ int main(int argc, char* argv[]) {
     FMOD_SOUND_FORMAT soundFormat;
     int channels, bits;
     
-    musicStream->getFormat(&soundType, &soundFormat, &channels, &bits);
+    result = musicStream->getFormat(&soundType, &soundFormat, &channels, &bits);
+    CheckError(result, "getFormat");
     std::cout << "Stream format: " << channels << " channels, " << bits << " bits" << std::endl;
     
     // Get length

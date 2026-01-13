@@ -60,6 +60,8 @@ public:
     };
     
     // Get singleton instance
+    // Note: In production code, consider using smart pointers or a destroy() method
+    // for explicit cleanup. For this example, the OS cleans up when program exits.
     static AudioManager* getInstance() {
         if (!instance) {
             instance = new AudioManager();
@@ -228,6 +230,8 @@ public:
     }
     
     // Destructor
+    // Note: shutdown() is called here as a safety measure, but in production code
+    // you should call shutdown() explicitly before program termination
     ~AudioManager() {
         shutdown();
     }
