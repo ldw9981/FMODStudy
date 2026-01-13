@@ -15,6 +15,8 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <thread>
+#include <chrono>
 
 class AudioManager {
 private:
